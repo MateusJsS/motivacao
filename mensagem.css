@@ -1,0 +1,221 @@
+body{
+    font-family: 'Poppins',sans-serif;
+    background: linear-gradient(to right,#f5b8d0,#d9a5d6);
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    animation: backgroundAnimation 8s ease infinite;
+    background-size: 400% 400%;
+     box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes backgroundAnimation{
+    0%{
+        background: linear-gradient(135deg, #f5b8d0, #d9a5d6);
+    }
+    50%{
+        background: linear-gradient(135deg, #d9a5d6, #f5b8d0);
+    }
+    100%{
+        background: linear-gradient(135deg, #f5b8d0, #d9a5d6);
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    animation: fadeInUp 2s forwards;
+    padding-bottom: 100px;
+}
+
+.intro{
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 150px;
+    opacity: 0;
+    animation: fadeInUp 2s forwards;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(30px);
+    animation-delay: 1s;
+}
+
+.message{
+    font-size: 1.6rem;
+    margin: 20px;
+    opacity: 0;
+    animation: fadeIn 4s forwards;
+    line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
+    transform: translateY(20px);
+}
+
+.intro, .message{
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.message:nth-child(1){
+    animation-delay: 3s;
+}
+
+.message:nth-child(2){
+    animation-delay: 5s;
+}
+
+.message:nth-child(3){
+    animation-delay: 7s;
+}
+
+.voltar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.voltar{
+    background-color: #ffb6c1;
+    color:#fff;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;    
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s ease,box-shadow 0.3s ease ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.voltar:hover{
+    background-color: #f99bca;
+    transform: scale(1.05);
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+footer{
+    position: relative;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+
+footer p {
+    font-family: 'Dancing Script', 'Great Vibes', cursive;
+    margin: 5px 0;
+}
+
+footer p:last-child {
+    font-size: 1.1rem;
+    color: #d31e82; /* Tom suave de rosa */
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px){
+    .intro{
+        font-size: 1.8rem;
+    }
+    .message{
+        font-size: 1.4rem;
+    }
+    .voltar{
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px){
+    .intro {
+        font-size: 1.6rem;
+    }
+
+    .message {
+        font-size: 1.3rem;
+    }
+
+    .voltar {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .foto-sorrindo img {
+        width: 25%; /* Aumentando o tamanho da imagem em telas menores */
+    }
+}
+
+#particles-js{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+
+.voltar{
+     transition: all 0.3s ease-in-out;
+}
+
+.voltar{
+    transform: scale(0.98);
+}
+
+.foto-sorrindo img{
+    width: 35%;
+    height: auto;
+    border-radius: 15%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.foto-sorrindo p {
+    margin-top: 15px;
+    font-size: 1rem; 
+    color: #ffffff; 
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* Estilo do link "Ler mais" */
+.ler-mais {
+    color: #f07b8b;  /* Cor suave e destacada */
+    text-decoration: none;
+    font-weight: bold;
+    display: block;  /* Para garantir que o link ocupe toda a linha */
+    margin-top: 10px; /* Adiciona um pequeno espaço acima do link */
+    font-size: 1.1em; /* Aumenta um pouco o tamanho da fonte */
+    text-decoration: none
+}
+
+.ler-mais:hover {
+    text-decoration: underline;
+    color: #d04a63;  /* Cor de hover mais intensa */
+}

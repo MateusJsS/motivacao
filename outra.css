@@ -1,0 +1,112 @@
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do corpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f5b8d0, #d9a5d6);
+    color: #fff;
+    text-align: center;
+    overflow: auto;
+    animation: backgroundAnimation 8s ease infinite;
+    background-size: 400% 400%;
+}
+
+/* Animação do fundo */
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container Principal */
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    margin: 100px auto;
+    max-width: 800px;
+}
+
+/* Mensagem principal */
+.mensagem {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    animation: fadeIn 2s ease-in-out forwards;
+    margin-bottom: 40px;
+}
+
+/* Botão de Voltar */
+.voltar a {
+    margin-top: 70px;
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff5c8d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.voltar a:hover {
+    background-color: #d94c74;
+    transform: scale(1.05);
+}
+
+/* Fundo das partículas */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Animação de Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .mensagem {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    .voltar a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mensagem {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .voltar a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+footer{
+    position: relative;
+    bottom: 20px;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}

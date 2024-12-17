@@ -1,0 +1,259 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url(imagens/estela.gif);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    background-color: rgba(255, 204, 203, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+header h1 {
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 
+    0 0 5px #ff69b4,
+    0 0 10px #ff69b4,
+    0 0 15px #ff69b4,
+    0 0 20px #ff69b4,
+    0 0 30px #ff69b4,
+    0 0 40px #ff69b4,
+    0 0 50px #ff69b4;
+    margin: 0;
+}
+
+
+/* Rodapé */
+footer {
+    text-align: center;
+    background-color: rgba(255, 204, 203, 0.8);
+    padding: 15px;
+    margin-top: auto;
+    font-size: 15px;
+    font-family:'Poppins',sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+}
+
+
+
+/* Área do percurso */
+.percurso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 90%;
+    height: 300px;
+    background: linear-gradient(135deg,rgba(255,255,255,0.3), rgba((255, 182, 193, 0.5)));
+    border-radius: 20px;
+    position: relative;
+    overflow: auto;
+    box-shadow:  0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Pista */
+.pista {
+    width: 80%;
+    height: 80%; 
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.4)), url('imagens/road.jpg');
+    background-size: 150% 100%;
+    border: 8px solid rgba(255, 182, 193, 0.8);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10ox 15px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.pista:hover{
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Carro */
+#carrinho {
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: grab;
+    transition: left 0.1s ease-out;
+}
+
+/* Mensagem de introdução */
+.mensagem-inicial {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 24px auto;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3)
+    0 0 15px rgba(255, 182, 193, 0.7),
+    0 0 20px rgba(255, 182, 193, 0.6);
+    background: linear-gradient(to right, rgba(247, 194, 212, 0.7), rgba(230, 169, 193, 0.7));
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Corações flutuantes */
+.coraçao-flutuante {
+    top: -170px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+.coraçao {
+    font-size: 30px !important;
+    animation: flutuar 5s ease-in-out infinite;
+    position: absolute;
+    opacity: 0;
+}
+
+.coraçao:nth-child(1) {
+    animation-delay: 0s;
+    left: 10%;
+    animation-duration: 10s;
+}
+
+.coraçao:nth-child(2) {
+    animation-delay: 1s;
+    left: 30%;
+    animation-duration: 6s;
+}
+
+.coraçao:nth-child(3) {
+    animation-delay: 2s;
+    left: 50%;
+    animation-duration: 7s;
+}
+
+.coraçao:nth-child(4) {
+    animation-delay: 3s;
+    left: 70%;
+    animation-duration: 8s;
+}
+
+@keyframes flutuar {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    /* Ajuste o tamanho e o posicionamento dos corações no celular */
+    .coraçao {
+        font-size: 50px; /* Aumentar o tamanho dos corações no celular */
+        position: absolute;
+        top: 10%;
+        left: 20%;
+        z-index: 1;
+    }
+
+    /* Ajustar a mensagem inicial */
+    .mensagem-inicial {
+        font-size: 20px; /* Ajustar o tamanho da fonte no celular */
+    }
+}
+
+.coraçao:nth-child(1) {
+    animation-delay: 0s;
+    left: 10%;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+}
+
+@media (max-width:600px){
+    .pista{
+        width: 100%;
+        height: 60%;
+        margin-top: 10%;
+    }
+    
+}
+
+#reiniciar {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: absolute;
+    top: 350px;
+    right: 290px;
+    padding: 8px 20px;
+    background-color: rgba(255, 182, 193, 0.8); /* Menos saturado */
+    border: 2px solid purple;
+    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+    border-radius: 10px;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#reiniciar:hover{
+    background-color:rgba(255, 182, 193, 1);
+
+}
+
+#carrinho {
+    animation: highlight 1s infinite alternate;
+  }
+  
+  @keyframes highlight {
+    0% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 20px rgb(80, 80, 69);
+    }
+  }
+  
